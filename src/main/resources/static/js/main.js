@@ -165,7 +165,7 @@ function nextPrev(n) {
 	currentTab = currentTab + n;
 	
 	if($("#expensas").val() == ""){
-		$("#inputExpensas").val("SIN EXPENSAS");
+		$("#inputExpensas").val("0");
 	}else{
 		$("#inputExpensas").val($("#expensas").val());
 	}
@@ -263,21 +263,21 @@ document.getElementById('dpto').onclick = function() {
 
 // ----------------------------------Cantidad ambientes
 // ---------------------------------
-$("#inputCantHamb").val('1 AMBIENTE');
+$("#inputCantHamb").val('1');
 document.getElementById('monoambiente').onclick = function() {
 	$("#inputCantHamb").val('MONOAMBIENTE');
 };
 document.getElementById('1amb').onclick = function() {
-	$("#inputCantHamb").val('1 AMBIENTE');
+	$("#inputCantHamb").val('1');
 };
 document.getElementById('2amb').onclick = function() {
-	$("#inputCantHamb").val('2 AMBIENTE');
+	$("#inputCantHamb").val('2');
 };
 document.getElementById('3amb').onclick = function() {
-	$("#inputCantHamb").val('3 AMBIENTE');
+	$("#inputCantHamb").val('3');
 };
 document.getElementById('4amb').onclick = function() {
-	$("#inputCantHamb").val('4 O MAS AMBIENTES');
+	$("#inputCantHamb").val('4 O MAS');
 };
 
 // ------------------------------- Informacion Legal

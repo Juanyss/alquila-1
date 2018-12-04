@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/home_nvo.css}"/>
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Lato" rel="stylesheet"/>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -34,8 +35,7 @@
                 <source id="webm" th:src="@{img/fondochaco_nvo2.webm}" type="video/webm"/>
             </video>
         </div>
-        <div class="buscador">
-        <form id="form" class="firstcontainer" th:action="@{/search}" th:object="${search}" method="post">
+        <div class="buscador">        
             <div class="buscador_container">
                 <div class="dropdown container">
                     <div class="select2">
@@ -44,17 +44,18 @@
                         <i class="toggle icon icon-arrow-up"></i>
                         <span class="placeholder">Tipo de inmueble...</span>
                         <label class="option">
-                            <input type="radio" name="option2" th:value="*{placeType}"/>
+                            <input type="radio" name="option2" id="tipo0"/>
                             <span class="title"><i class=""></i>Todos</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="option2" value="DEPARTAMENTO" th:value="*{placeType}"/>
+                            <input type="radio" name="option2" value="1" id="tipo1"/>
                             <span class="title"><i class=""></i>Departamento</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="option2" value="CASA" th:value="*{placeType}"/>
+                            <input type="radio" name="option2" value="2" id="tipo2"/>
                             <span class="title"><i class=""></i>Casa</span>
                         </label>
+                        <input type="hidden" id="inputTipo"/>
                     </div>
 
                     <div class="select2">
@@ -63,21 +64,22 @@
                         <i class="toggle icon icon-arrow-up"></i>
                         <span class="placeholder">Monto del alquiler...</span>
                         <label class="option">
-                            <input type="radio" name="option3" value="" th:value="*{price}"/>
+                            <input type="radio" name="option3" value=""/>
                             <span class="title"><span class=""></span>Todos</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="option3" value="5000" th:value="*{price}"/>
+                            <input type="radio" name="option3" value="5000"/>
                             <span class="title"><span class=""></span>Hasta $5000</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="option3" value="10000" th:value="*{price}"/>
+                            <input type="radio" name="option3" value="10000"/>
                             <span class="title"><span class=""></span>Hasta $10000</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="option3" value="15000" th:value="*{price}"/>
+                            <input type="radio" name="option3" value="15000"/>
                             <span class="title"><span class=""></span>Hasta $15000</span>
                         </label>
+                        <input type="hidden" id="inputTipo" />
                     </div>
 
                     <div class="select2">
@@ -86,25 +88,26 @@
                         <i class="toggle icon icon-arrow-up"></i>
                         <span class="placeholder">Cantidad de ambientes</span>
                         <label class="option">
-                            <input type="radio" name="option4" value="Monoambiente" th:value="*{rooms}"/>
+                            <input type="radio" name="option4" value="0" id="monoamb"/>
                             <span class="title"><i class=""></i>Monoambiente</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="option4" value="1" th:value="*{rooms}"/>
+                            <input type="radio" name="option4" value="1" id="1amb"/>
                             <span class="title"><i class=""></i>1</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="option4" value="2" th:value="*{rooms}"/>
+                            <input type="radio" name="option4" value="2" id="2amb"/>
                             <span class="title"><i class=""></i>2</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="option4" value="3" th:value="*{rooms}"/>
+                            <input type="radio" name="option4" value="3" id="3amb"/>
                             <span class="title"><i class=""></i>3</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="option4" vale="4" th:value="*{rooms}"/>
+                            <input type="radio" name="option4" vale="4" id="4amb"/>
                             <span class="title"><i class=""></i>4 o más</span>
                         </label>
+                        <input type="hidden" id="inputTipo" />
                     </div>
 
                     <div class="select2">
@@ -122,10 +125,11 @@
                         </label>
                     </div>
                 </div>
-                
+                <a th:href="@{index}" id="link">
                 <button id="buscar">BUSCAR</button>
+                </a>
                 </div>
-            </form>
+           
         </div>
     </div>
      <div class="tittle">
@@ -146,7 +150,7 @@
                   <div class="card-content tipo">
                     <span class="tags" th:text="*{i.type}"></span>
                     <span class="tags2">ALQUILER</span><span class="text_alquiler" th:text="'$'+*{i.price}"></span>
-                    <span class="tags2">EXPENSAS</span><span class="text_alquiler" th:text="*{i.expensesValue}"></span>
+                    <span class="tags2">EXPENSAS</span><span class="text_alquiler" th:text="'$'+*{i.expensesValue}"></span>
                     <span class="tags2" >AMBIENTES</span><span class="text_alquiler" th:text="*{i.propertyDetail.rooms}"></span>
                     <a th:href="@{'/property/' + ${i.id}}">
                     	<span class="btn_detalles" ></span>
@@ -180,9 +184,9 @@
                 <div class="content">
                   <span class="btn_detalles"></span>
                   <div class="card-content tipo">
-                    <span class="tags">DEPARTAMENTO</span>
+                    <span class="tags" th:text="*{i.type}"></span>
                     <span class="tags2">ALQUILER</span><span class="text_alquiler" th:text="'$'+*{i.price}"></span>
-                    <span class="tags2">EXPENSAS</span><span class="text_alquiler" th:text="*{i.expensesValue}"></span>
+                    <span class="tags2">EXPENSAS</span><span class="text_alquiler" th:text="'$'+*{i.expensesValue}"></span>
                     <span class="tags2">AMBIENTES</span><span class="text_alquiler" th:text="*{i.propertyDetail.rooms}"></span>
                     <a th:href="@{'/property/' + ${i.id}}">
                     	<span class="btn_detalles" ></span>
@@ -242,6 +246,7 @@
     </div>
   </div>
       </footer>
+  <script th:src="@{/js/mainHome.js}"></script>
 </body>
 
 </html>

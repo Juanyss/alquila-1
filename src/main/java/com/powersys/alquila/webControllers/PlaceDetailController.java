@@ -13,7 +13,6 @@ import com.powersys.alquila.dtos.PropertyDTO;
 import com.powersys.alquila.dtos.SearchDTO;
 import com.powersys.alquila.services.interfaces.PlaceDetailService;
 import com.powersys.alquila.services.implementations.InmuebleService;
-import com.powersys.alquila.services.implementations.PropertyServiceImp;
 
 @Controller
 @RequestMapping("/property/")
@@ -22,7 +21,7 @@ public class PlaceDetailController {
 	private PlaceDetailService placeDetail;
 	
 	private InmuebleService inmuebleService;
-	private PropertyServiceImp propertyService;
+	
 	
 	
 	public PlaceDetailController(PlaceDetailService placeDetail, InmuebleService inmuebleService) {
@@ -48,15 +47,5 @@ public class PlaceDetailController {
 		return "redirect:add";
 	}
 	
-	@GetMapping("/search")
-	public String search(Model model) {
-		model.addAttribute("search", new SearchDTO());
-		return "index";
-	}
 	
-	@PostMapping("/search")
-	public String search(@ModelAttribute SearchDTO searchDTO) {
-		this.inmuebleService.propertyServiceImp(searchDTO);
-		return "redirect:search";
-	}
 }

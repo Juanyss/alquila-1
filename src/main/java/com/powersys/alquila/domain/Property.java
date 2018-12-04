@@ -33,6 +33,8 @@ public class Property {
 		
 	private String type;
 	
+	private String room;
+	
 	private String expenses;//guarda "si" o "no"
 	
 	private String expensesValue;//guarda el valor de la expensa
@@ -171,6 +173,14 @@ public class Property {
 
 	public void setDate(String date) {
 		this.date = date;
+	}
+
+	public String getRoom() {
+		return room;
+	}
+
+	public void setRoom(String room) {
+		this.room = room;
 	}
 
 	

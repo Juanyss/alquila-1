@@ -18,5 +18,13 @@ public interface InmuebleServiceInterface {
 	public boolean insertInmueble(InmuebleDTO inmueble);
 	public List<Property> findAll();
 	public boolean insertInmueble(PropertyDTO inmueble);
-
+	
+	
+	public List<Property> findByType(String type);
+	public List<Property> findByRoom(String room);
+	public List<Property> findByPrice(String price);
+	
+	
+	
+	
 }

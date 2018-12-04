@@ -43,7 +43,7 @@ public class InmuebleService implements InmuebleServiceInterface{
 		a.setFloor(inmueble.getaFloor());
 		a.setApartment(inmueble.getaApartment());
 		a.setAditionalInfo(inmueble.getaAditionalInfo());
-		
+		p.setRoom(inmueble.getRooms());
 		p.setExpenses(inmueble.getExpenses());
 		p.setExpensesValue(inmueble.getExpensesValue());
 		p.setPrice(inmueble.getPrice());
@@ -75,10 +75,17 @@ public class InmuebleService implements InmuebleServiceInterface{
 		this.propertyRepository.save(p);
 		return true;
 	}
+	
+	
 
 	@Override
 	public List<Property> findAll() {
 		return (List<Property>) this.propertyRepository.findAll(sortByIdDesc());
+	}
+	
+	
+	public List<Property> findByType(String type){
+	    return (List<Property>) this.propertyRepository.findByType(type);
 	}
 
 	@Override
@@ -95,17 +102,23 @@ public class InmuebleService implements InmuebleServiceInterface{
         return new Sort(Sort.Direction.DESC, "id");
     }
 
-	public void propertyService(SearchDTO searchDTO) {
-		// TODO Auto-generated method stub
-		
+
+
+	@Override
+	public List<Property> findByRoom(String room) {
+		return (List<Property>) this.propertyRepository.findByRoom(room);		
 	}
 
-	public void propertyServiceImp(SearchDTO searchDTO) {
+
+
+	@Override
+	public List<Property> findByPrice(String price) {
 		// TODO Auto-generated method stub
-		
+		return null;
 	}
 
 	
 
+	
 	
 }

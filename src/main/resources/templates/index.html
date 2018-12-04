@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>    
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Lato" rel="stylesheet"/>
-    <link rel="stylesheet" th:href="@{/style_resultados.css}"/>
-    <link rel="stylesheet" th:href="@{/table_detalles.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style_resultados.css}"/>
+    <link rel="stylesheet" th:href="@{/css/table_detalles.css}"/>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   </head>
   <body>
     <header class="header">
       <div class="header_container">
         <div class="logo">
-          <a class="header logo" href="#"><img th:src="@{/img/alquila.png}"></a>
+          <a class="header logo" href="#"><img th:src="@{/img/alquila.png}"/></a>
         </div>
         <div class="buttons">
           <div class="btn_container">
@@ -103,12 +102,12 @@
             </div>
             <div class="select_container">
               <div class="select2">
-                <input type="radio" name="option5">
+                <input type="radio" name="option5"/>
                 <i class="toggle icon icon-arrow-down"></i>
                 <i class="toggle icon icon-arrow-up"></i>
                 <span class="placeholder">Tipo de dueño...</span>
                 <label class="option">
-                  <input type="radio" name="option5" value="">
+                  <input type="radio" name="option5" value=""/>
                   <span class="title"><i class=""></i>Todos</span>
                 </label>
                 <label class="option">
@@ -167,165 +166,43 @@
             </div>
           </div>
 
-          <div class="example-1 card" id="card2">
-            <div class="wrapper">
-              <span id="fecha2">26/11/2018</span>
+          <div class="example-1 card" id="card2" th:each="i: ${inmueble}">
+            <div class="wrapper" th:style="'background-image:url(' + @{/image/} + ${i.id} +');'">
+              <span id="fecha2" th:text="*{i.date}"></span>
               <div class="data">
                 <div class="content">
                   <span class="btn_detalles"></span>
                   <div class="card-content tipo">
-                    <span class="tags">DEPARTAMENTO</span>
-                    <span class="tags2">ALQUILER</span><span class="text_alquiler">$6500</span>
-                    <span class="tags2">EXPENSAS</span><span class="text_alquiler">$6000</span>
-                    <span class="tags2">AMBIENTES</span><span class="text_alquiler">4 o más</span>
-                    <span class="btn_detalles"></span>
+                    <span class="tags" th:text="*{i.type}"></span>
+                    <span class="tags2">ALQUILER</span><span class="text_alquiler" th:text="'$'+*{i.price}"></span>
+                    <span class="tags2">EXPENSAS</span><span class="text_alquiler" th:text="*{i.expensesValue}"></span>
+                    <span class="tags2">AMBIENTES</span><span class="text_alquiler" th:text="*{i.propertyDetail.rooms}"></span>
+                    <a th:href="@{'/property/' + ${i.id}}">
+                    	<span class="btn_detalles" ></span>
+                    </a>
                   </div>
                   <div class="direccion_tittle">
                     <span class="direccion_pic"></span><h3>DIRECCIÓN</h3>
                   </div>
                   <div class="card-content direccion">
-                    <span class="dire_text">Calle:</span><span class="text_dir">Av. Libertad</span>
-                    <span class="dire_text">Altura:</span><span class="text_dir">5215</span>
+                    <span class="dire_text">Calle:</span><span class="text_dir" th:text="*{i.Adress.street}"></span>
+                    <span class="dire_text">Altura:</span><span class="text_dir" th:text="*{i.Adress.number}"></span>
                   </div>
                   <div class="card-content direccion2">
-                    <span class="dire_text">Piso:</span><span class="text_dir">2</span>
-                    <span class="dire_text">Departamento:</span><span class="text_dir">A</span>
+                    <span class="dire_text">Piso:</span><span class="text_dir" th:text="*{i.Adress.floor}"></span>
+                    <span class="dire_text">Departamento:</span><span class="text_dir" th:text="*{i.Adress.apartment}"></span>
                   </div>
                   <div class="dire_otros">
-                    <span class="dire_text">Otros:</span><span class="text_dir">A 200  mts de la UNNE, frente a la facultad de ingeniería.</span>
+                    <span class="dire_text">Otros:</span><span class="text_dir" th:text="*{i.Adress.aditionalInfo}"></span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-          <div class="example-1 card" id="card2">
-            <div class="wrapper">
-              <span id="fecha2">26/11/2018</span>
-              <div class="data">
-                <div class="content">
-                  <span class="btn_detalles"></span>
-                  <div class="card-content tipo">
-                    <span class="tags">DEPARTAMENTO</span>
-                    <span class="tags2">ALQUILER</span><span class="text_alquiler">$6500</span>
-                    <span class="tags2">EXPENSAS</span><span class="text_alquiler">$6000</span>
-                    <span class="tags2">AMBIENTES</span><span class="text_alquiler">4 o más</span>
-                    <span class="btn_detalles"></span>
-                  </div>
-                  <div class="direccion_tittle">
-                    <span class="direccion_pic"></span><h3>DIRECCIÓN</h3>
-                  </div>
-                  <div class="card-content direccion">
-                    <span class="dire_text">Calle:</span><span class="text_dir">Av. Libertad</span>
-                    <span class="dire_text">Altura:</span><span class="text_dir">5215</span>
-                  </div>
-                  <div class="card-content direccion2">
-                    <span class="dire_text">Piso:</span><span class="text_dir">2</span>
-                    <span class="dire_text">Departamento:</span><span class="text_dir">A</span>
-                  </div>
-                  <div class="dire_otros">
-                    <span class="dire_text">Otros:</span><span class="text_dir">A 200  mts de la UNNE, frente a la facultad de ingeniería.</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="example-1 card" id="card2">
-            <div class="wrapper">
-              <span id="fecha2">26/11/2018</span>
-              <div class="data">
-                <div class="content">
-                  <span class="btn_detalles"></span>
-                  <div class="card-content tipo">
-                    <span class="tags">DEPARTAMENTO</span>
-                    <span class="tags2">ALQUILER</span><span class="text_alquiler">$6500</span>
-                    <span class="tags2">EXPENSAS</span><span class="text_alquiler">$6000</span>
-                    <span class="tags2">AMBIENTES</span><span class="text_alquiler">4 o más</span>
-                    <span class="btn_detalles"></span>
-                  </div>
-                  <div class="direccion_tittle">
-                    <span class="direccion_pic"></span><h3>DIRECCIÓN</h3>
-                  </div>
-                  <div class="card-content direccion">
-                    <span class="dire_text">Calle:</span><span class="text_dir">Av. Libertad</span>
-                    <span class="dire_text">Altura:</span><span class="text_dir">5215</span>
-                  </div>
-                  <div class="card-content direccion2">
-                    <span class="dire_text">Piso:</span><span class="text_dir">2</span>
-                    <span class="dire_text">Departamento:</span><span class="text_dir">A</span>
-                  </div>
-                  <div class="dire_otros">
-                    <span class="dire_text">Otros:</span><span class="text_dir">A 200  mts de la UNNE, frente a la facultad de ingeniería.</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="example-1 card" id="card2">
-            <div class="wrapper">
-              <span id="fecha2">26/11/2018</span>
-              <div class="data">
-                <div class="content">
-                  <span class="btn_detalles"></span>
-                  <div class="card-content tipo">
-                    <span class="tags">DEPARTAMENTO</span>
-                    <span class="tags2">ALQUILER</span><span class="text_alquiler">$6500</span>
-                    <span class="tags2">EXPENSAS</span><span class="text_alquiler">$6000</span>
-                    <span class="tags2">AMBIENTES</span><span class="text_alquiler">4 o más</span>
-                    <span class="btn_detalles"></span>
-                  </div>
-                  <div class="direccion_tittle">
-                    <span class="direccion_pic"></span><h3>DIRECCIÓN</h3>
-                  </div>
-                  <div class="card-content direccion">
-                    <span class="dire_text">Calle:</span><span class="text_dir">Av. Libertad</span>
-                    <span class="dire_text">Altura:</span><span class="text_dir">5215</span>
-                  </div>
-                  <div class="card-content direccion2">
-                    <span class="dire_text">Piso:</span><span class="text_dir">2</span>
-                    <span class="dire_text">Departamento:</span><span class="text_dir">A</span>
-                  </div>
-                  <div class="dire_otros">
-                    <span class="dire_text">Otros:</span><span class="text_dir">A 200  mts de la UNNE, frente a la facultad de ingeniería.</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="example-1 card" id="card2">
-            <div class="wrapper">
-              <span id="fecha2">26/11/2018</span>
-              <div class="data">
-                <div class="content">
-                  <span class="btn_detalles"></span>
-                  <div class="card-content tipo">
-                    <span class="tags">DEPARTAMENTO</span>
-                    <span class="tags2">ALQUILER</span><span class="text_alquiler">$6500</span>
-                    <span class="tags2">EXPENSAS</span><span class="text_alquiler">$6000</span>
-                    <span class="tags2">AMBIENTES</span><span class="text_alquiler">4 o más</span>
-                    <span class="btn_detalles"></span>
-                  </div>
-                  <div class="direccion_tittle">
-                    <span class="direccion_pic"></span><h3>DIRECCIÓN</h3>
-                  </div>
-                  <div class="card-content direccion">
-                    <span class="dire_text">Calle:</span><span class="text_dir">Av. Libertad</span>
-                    <span class="dire_text">Altura:</span><span class="text_dir">5215</span>
-                  </div>
-                  <div class="card-content direccion2">
-                    <span class="dire_text">Piso:</span><span class="text_dir">2</span>
-                    <span class="dire_text">Departamento:</span><span class="text_dir">A</span>
-                  </div>
-                  <div class="dire_otros">
-                    <span class="dire_text">Otros:</span><span class="text_dir">A 200  mts de la UNNE, frente a la facultad de ingeniería.</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+         </div>
         </div>
-      </div>
+
+          
     </main>
     <div class="wrap2"></div>
     <footer class="footer">
