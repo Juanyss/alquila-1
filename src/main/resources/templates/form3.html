@@ -297,11 +297,11 @@
 
 					<div class="imageUpload1">
 						<img class="image" id="div1" src="#" alt="" style="display: none" />
-						<input type='file' onchange="readURL1(this);" id="imageUpload1"
+						<input type='file' onchange="readURL1(this);" id="imageUpload1" value="0"
 							accept=".png, .jpg, .jpeg" set-to="div1" style="display: none;"  th:field="*{image}"/>
-						<label for="imageUpload1"></label> <label
+						<label for="imageUpload1" id="img1btn"></label> <label
 							for="imageUploadpreview1"></label>
-						<div id="thumb1"></div>
+						<div id="thumb1" ></div>						
 					</div>
 
 					<div class="mensaje">
@@ -321,7 +321,7 @@
 						<img class="image" id="div2" src="#" alt="" style="display: none" />
 						<input type='file' onchange="readURL2(this);" id="imageUpload2"
 							accept=".png, .jpg, .jpeg" set-to="div2" style="display: none;" th:field="*{image2}" />
-						<label for="imageUpload2"></label> <label
+						<label for="imageUpload2" id="img2btn"></label> <label
 							for="imageUploadpreview2"></label>
 						<div id="thumb2"></div>
 					</div>
@@ -330,8 +330,8 @@
 						<img class="image" id="div3" src="#" alt="" style="display: none" />
 						<input type='file' onchange="readURL3(this);" id="imageUpload3"
 							accept=".png, .jpg, .jpeg" set-to="div3" style="display: none;" th:field="*{image3}" />
-						<label for="imageUpload3"></label> <label
-							for="imageUploadpreview3"></label>
+						<label for="imageUpload3" id="img3btn"></label> <label
+							for="imageUploadpreview3" ></label>
 						<div id="thumb3"></div>
 					</div>
 
@@ -340,8 +340,8 @@
 						<img class="image" id="div4" src="#" alt="" style="display: none" />
 						<input type='file' onchange="readURL4(this);" id="imageUpload4"
 							accept=".png, .jpg, .jpeg" set-to="div4" style="display: none;" th:field="*{image4}" />
-						<label for="imageUpload4"></label> <label
-							for="imageUploadpreview4"></label>
+						<label for="imageUpload4" id="img4btn"></label> <label
+							for="imageUploadpreview4" ></label>
 						<div id="thumb4"></div>
 					</div>
 
@@ -350,8 +350,8 @@
 						<img class="image" id="div5" src="#" alt="" style="display: none" />
 						<input type='file' onchange="readURL5(this);" id="imageUpload5"
 							accept=".png, .jpg, .jpeg" set-to="div5" style="display: none;" th:field="*{image5}"/>
-						<label for="imageUpload5"></label> <label
-							for="imageUploadpreview5"></label>
+						<label for="imageUpload5" id="img5btn"></label> <label
+							for="imageUploadpreview5" ></label>
 						<div id="thumb5"></div>
 					</div>
 				</div>

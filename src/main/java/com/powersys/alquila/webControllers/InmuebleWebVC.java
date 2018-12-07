@@ -49,7 +49,7 @@ public class InmuebleWebVC {
 		return "home1";
 	}
 	
-	@RequestMapping (value= "/index", method = RequestMethod.GET)	
+	@RequestMapping (value= "/index000", method = RequestMethod.GET)	
 	public String resultadoAll (Model model) {		
 		model.addAttribute("inmueble", this.inmuebleService.findAll());
 		return "index";
@@ -96,6 +96,25 @@ public class InmuebleWebVC {
 		model.addAttribute("inmueble", this.inmuebleService.findByRoom("4 O MAS"));
 		return "index";
 	}
+	
+	@RequestMapping (value= "/index010", method = RequestMethod.GET)	
+	public String resultadoPrice1 (Model model) {
+		model.addAttribute("inmueble", this.inmuebleService.findByPrice5000(1));
+		return "index";
+	}
+	
+	@RequestMapping (value= "/index020", method = RequestMethod.GET)	
+	public String resultadoPrice2 (Model model) {
+		model.addAttribute("inmueble", this.inmuebleService.findByPrice10000(5001));
+		return "index";
+	}
+	
+	@RequestMapping (value= "/index030", method = RequestMethod.GET)	
+	public String resultadoPrice3 (Model model) {
+		model.addAttribute("inmueble", this.inmuebleService.findByPrice15000(10001));
+		return "index";
+	}
+	
 	
 	
 	

@@ -128,14 +128,20 @@ function showTab(n) {
 	
 }
 
+
 function nextPrev(n) {
 	// This function will figure out which tab to display
 	var x = document.getElementsByClassName("tab");
 	// Exit the function if any field in the current tab is invalid:
+	
+	
 	if (n == 1 && ($("#monto").val() == "") || ($("#inp1").val() == "")
 			|| ($("#inp2").val() == "")
 			|| ($("#expensas").attr('required') == "required") || 
-			($("#gastosc").attr('required') == "required") || ($("#deposito").attr('required') == "required"))
+			($("#gastosc").attr('required') == "required") || ($("#deposito").attr('required') == "required") 
+			|| ($("#imageUpload1").attr('required') == "required") || ($("#imageUpload2").attr('required') == "required")
+			|| ($("#imageUpload3").attr('required') == "required") || ($("#imageUpload4").attr('required') == "required")
+			|| ($("#imageUpload5").attr('required') == "required"))
 		if ($("#monto").val() == "") {
 			window.alert("Falta ingresar un monto");
 			return false;
@@ -155,7 +161,12 @@ function nextPrev(n) {
 			return false;
 		} else if (($("#deposito").val() == "")
 				&& ($("#deposito").attr('required') == "required")) {
-			window.alert("Falta ingresar los gastos de deposito");
+			window.alert("Falta ingresar los gastos de deposito");			
+			return false;
+		} else if(($("#imageUpload1").attr('required') == "required") || ($("#imageUpload2").attr('required') == "required")
+				|| ($("#imageUpload3").attr('required') == "required") || ($("#imageUpload4").attr('required') == "required")
+				|| ($("#imageUpload5").attr('required') == "required")){
+			window.alert("Falta ingresar las cinco fotos");			
 			return false;
 		}
 	
@@ -163,6 +174,14 @@ function nextPrev(n) {
 	x[currentTab].style.display = "none";
 	// Increase or decrease the current tab by 1:
 	currentTab = currentTab + n;
+	if(currentTab == 2){
+		$("#imageUpload1").attr("required", true)
+		$("#imageUpload2").attr("required", true)
+		$("#imageUpload3").attr("required", true)
+		$("#imageUpload4").attr("required", true)
+		$("#imageUpload5").attr("required", true)
+	}
+	
 	
 	if($("#expensas").val() == ""){
 		$("#inputExpensas").val("0");
@@ -191,6 +210,23 @@ function nextPrev(n) {
 	showTab(currentTab);
 	
 }
+
+//---------------------------Make images property not required
+document.getElementById('img1btn').onclick = function() {
+	$("#imageUpload1").attr("required", false)
+};
+document.getElementById('img2btn').onclick = function() {
+	$("#imageUpload2").attr("required", false)
+};
+document.getElementById('img3btn').onclick = function() {
+	$("#imageUpload3").attr("required", false)
+};
+document.getElementById('img4btn').onclick = function() {
+	$("#imageUpload4").attr("required", false)
+};
+document.getElementById('img5btn').onclick = function() {
+	$("#imageUpload5").attr("required", false)
+};
 
 function fixStepIndicator(n) {
 	// This function removes the "active" class of all steps...

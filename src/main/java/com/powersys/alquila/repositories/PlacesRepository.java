@@ -19,6 +19,9 @@ public interface PlacesRepository extends CrudRepository<Property, Long> {
 	List<Property> findByType(String type);
 	
 	List<Property> findByRoom(String room);
+
+
+	List<Property> findByPrice(Integer price);
 	
 	
 }

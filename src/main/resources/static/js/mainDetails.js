@@ -60,3 +60,10 @@ if($("#balcon").attr("value") == "NO"){
 if($("#patio").attr("value") == "NO"){
 	$("#spanPatio").attr("class", "iconx")
 }
+
+
+if($("#AdInf").attr("value") == ""){
+	$("#AdInf").hide()
+}else{
+	$("#AdInf").show()
+}

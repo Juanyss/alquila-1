@@ -575,6 +575,7 @@ main div {
 }
 
 .icons2 {
+  background-image: url(/img/direccion_2.png);
   height: 30px;
   width: 30px;
   background-position: center;
@@ -598,7 +599,7 @@ main div {
 }
 
 #detalles {
-  background-image: url(/img/detalles_2.png);
+  background-image: url(/img/detalles.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size:cover;

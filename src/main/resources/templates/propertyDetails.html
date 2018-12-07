@@ -22,11 +22,13 @@
               <label for="buscador"></label>
               <span class="btn_buscar">BUSCAR</span>
           </div>
+          <a name="btnC" th:href="@{/property/add}">
             <div class="btn_container">
             <input type="checkbox" id="crear_anuncio" name="btn" class="crear"/>
               <label for="crear_anuncio"></label>
               <span class="btn_crear">CREAR ANUNCIO</span>
           </div>
+          </a>
           </div>
       </div>
       </header>
@@ -161,7 +163,7 @@
 
                         <tr class="row100">
                           <td class="column100 column1" data-column="column1" id="row1"></td>
-                          <td class="column100 column2" data-column="column2"><span class="text">Otros:</span><span class="text2" th:text="*{aditionalProInfo}"></span></td>
+                          <td class="column100 column2" data-column="column2"></td>
                         </tr>
 
                         <tr class="row100" id="col1_row2">
@@ -190,6 +192,8 @@
                     </table>
 
                   </div>
+                  
+           
           
           <div class="text_container">
             <div class="descripcion">
@@ -197,16 +201,16 @@
                 <span id="descripcion_icon"></span>
             <h2>DESCRIPCIÓN</h2>
             </div>
-            <p>Lorem ipsum dolor amet everyday carry kogi kitsch glossier affogato. Meh neutra woke narwhal. Salvia meditation lomo single-origin coffee lyft chartreuse XOXO synth beard paleo hella. XOXO authentic hell of locavore paleo.</p>
+            <p th:text="*{aAditionalInfo}"></p>
           </div>
             <div class="infolegal">
               <div class="legal_text">
                 <span id="legal_icon"></span>
                 <h2>INFORMACIÓN LEGAL</h2>
               </div>
-            <p>Lorem ipsum dolor amet everyday carry kogi kitsch glossier affogato. Meh neutra woke narwhal. Salvia meditation lomo single-origin coffee lyft chartreuse XOXO synth beard paleo hella. XOXO authentic hell of locavore paleo.</p>
+            <p th:text="*{aditionalLegInfo}" id="AdInf"></p>
           </div>
-          </div>
+</div>
           
           <div class="table102 ver3">
 
@@ -256,8 +260,8 @@
                   <td class="column102 column4" data-column="column4"><span id="spanD">$</span><span th:text="*{initialDepositValue}"></span></td>
                 </tr>
 
-                <tr class="row100">
-                  <td colspan="4" class="column100 column1" data-column="column1" id="otros">Otros:<span class="text_otros">Lorem ipsum dolor amet everyday</span></td>
+                <tr class="row100" id="divOtros">
+                  <td colspan="4" class="column100 column1" data-column="column1" id="otros"></td>
                 </tr>
                 
               </tbody>
