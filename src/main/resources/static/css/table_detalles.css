@@ -321,6 +321,24 @@ td.column102.column1{
   font-weight: 400;
 }
 
+[for="crear_anuncio"] {
+  width: 6vh;
+  height: 6vh;
+  background-image:url(/img/alquilaicons_anuncio_2.png);
+  background-origin:content-box;
+  background-repeat: no-repeat;
+  background-size:contain;
+  margin-bottom: 3px;
+}
+
+input:checked + label[for="crear_anuncio"] {
+  background-image:url(/img/alquilaicons_anuncio.png);
+  background-origin: content-box;
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: #d9654f;
+ text-align: center;
+}
 /*-----------------------------------------------------------*/
 
 /* Clase que desactiva las opciones de información legal, las esconde

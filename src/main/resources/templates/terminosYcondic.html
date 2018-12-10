@@ -15,7 +15,7 @@
     <header class="header">
         <div class="header_container">
           <div class="logo">
-          <a class="header logo" href="#"><img th:src="@{/img/alquila.png}"/></a>
+          <a class="header logo" th:href="@{/}"><img th:src="@{/img/alquila.png}"/></a>
         </div>               
           <div class="buttons">
           <a name="btnC" th:href="@{/property/add}"> 
@@ -243,8 +243,8 @@
       <a href="#"><span class="footer_links">Sobre nosotros...</span></a>
       <a href="#"><span class="footer_links">Terminos y condiciones</span></a>
       <br/>
-      <a href="#"><span class="footer_links">Buscar</span></a>
-      <a href="#"><span class="footer_links">Crear anuncio...</span></a>
+      <a href="http://localhost:9002"><span class="footer_links">Buscar</span></a>
+      <a th:href="@{/property/add}"><span class="footer_links">Crear anuncio...</span></a>
     </div>
     <div class="suscribe">
       <h2>NEWSLETTER</h2>

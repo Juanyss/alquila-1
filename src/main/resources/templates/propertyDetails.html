@@ -14,12 +14,12 @@
       <header class="header">
         <div class="header_container">
           <div class="logo">
-          <a class="header logo" href="http://localhost:9002"><img th:src="@{/img/alquila.png}"/></a>
+          <a class="header logo" th:href="@{/}"><img th:src="@{/img/alquila.png}"/></a>
         </div>
           <div class="buttons">
             <div class="btn_container">
             <input type="checkbox" id="buscador" class="buscar" name="btn"/>
-              <label for="buscador"></label>
+              <label for="buscador" id="HideShow"></label>
               <span class="btn_buscar">BUSCAR</span>
           </div>
           <a name="btnC" th:href="@{/property/add}">
@@ -45,7 +45,7 @@
     
       <div class="top" id="back">
       </div>
-      <div class="buscador">
+      <div class="buscador"  id="BuscadorDiv" >
         <div class="buscador_container">
         <div class="dropdown container">
           <div class="select2">
@@ -333,10 +333,10 @@
   <div class="footer_container">
     <div class="Links">
       <a href="#"><span class="footer_links">Sobre nosotros...</span></a>
-      <a href="#"><span class="footer_links">Terminos y condiciones</span></a>
+      <a th:href="@{/terminosYcondic}"><span class="footer_links">Terminos y condiciones</span></a>
       <br/>
       <a href="#"><span class="footer_links">Buscar</span></a>
-      <a href="#"><span class="footer_links">Crear anuncio...</span></a>
+      <a th:href="@{/property/add}"><span class="footer_links">Crear anuncio...</span></a>
     </div>
     <div class="suscribe">
       <h2>NEWSLETTER</h2>

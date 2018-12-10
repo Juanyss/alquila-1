@@ -67,3 +67,4 @@ if($("#AdInf").attr("value") == ""){
 }else{
 	$("#AdInf").show()
 }
+

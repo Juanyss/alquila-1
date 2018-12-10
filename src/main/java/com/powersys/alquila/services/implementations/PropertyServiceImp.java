@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.powersys.alquila.domain.Property;
@@ -68,7 +69,8 @@ public class PropertyServiceImp implements PropertyServiceInterface {
 		}
 		
 		return dtos;
-	}
+	}	
+	
 
 	@Override
 	public PropertyDTO findOne(Long idProperty) {

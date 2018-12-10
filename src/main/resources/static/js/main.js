@@ -181,6 +181,9 @@ function nextPrev(n) {
 		$("#imageUpload4").attr("required", true)
 		$("#imageUpload5").attr("required", true)
 	}
+	if(currentTab == 3){
+		window.alert("Registro creado con exito");
+	}
 	
 	
 	if($("#expensas").val() == ""){

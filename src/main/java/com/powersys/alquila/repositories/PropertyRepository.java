@@ -2,6 +2,7 @@ package com.powersys.alquila.repositories;
 
 import java.util.List;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -34,5 +35,5 @@ public interface PropertyRepository extends CrudRepository<Property, String> {
 	@Query("select p from Property p where p.price <= :price")
 	public List<Property> findByPrice(@Param("price")Integer price);
 
-
+	List<Property> findAll(Sort sortByIdDesc);
 }

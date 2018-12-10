@@ -1,39 +1,23 @@
-//------------------Tipo
-$("#tipo1").click(function(){
-	$("#link").attr("href", "index200")
-});
-$("#tipo2").click(function(){
-	$("#link").attr("href", "index100")
-});
+if(($("#piso").attr("value") == "") || ($("#piso").attr("value") == "-") && ($("#dpto").attr("value") == "") || ($("#dpto").attr("value") == "-")){
+	$("#DyP").css("display", "none");
+}
 
-//-------------------Ambientes
-$("#monoamb").click(function(){
-	$("#link").attr("href", "index00M")
-});
+if(($("#piso1").attr("value") == "") || ($("#piso1").attr("value") == "-") && ($("#dpto1").attr("value") == "") || ($("#dpto1").attr("value") == "-")){
+	$("#DyP1").css("display", "none");
+}
 
-$("#1amb").click(function(){
-	$("#link").attr("href", "index001")
-});
+if(($("#piso2").attr("value") == "") || ($("#piso2").attr("value") == "-") && ($("#dpto2").attr("value") == "") || ($("#dpto2").attr("value") == "-")){
+	$("#DyP2").css("display", "none");
+}
 
-$("#2amb").click(function(){
-	$("#link").attr("href", "index002")
-});
+if(($("#piso3").attr("value") == "") || ($("#piso3").attr("value") == "-") && ($("#dpto3").attr("value") == "") || ($("#dpto3").attr("value") == "-")){
+	$("#DyP3").css("display", "none");
+}
 
-$("#3amb").click(function(){
-	$("#link").attr("href", "index003")
-});
+if(($("#piso4").attr("value") == "") || ($("#piso4").attr("value") == "-") && ($("#dpto4").attr("value") == "") || ($("#dpto4").attr("value") == "-")){
+	$("#DyP4").css("display", "none");
+}
 
-$("#4amb").click(function(){
-	$("#link").attr("href", "index004")
-});
-
-//--------------------Precio
-$("#p1").click(function(){
-	$("#link").attr("href", "index010")
-});
-$("#p2").click(function(){
-	$("#link").attr("href", "index020")
-});
-$("#p3").click(function(){
-	$("#link").attr("href", "index030")
-});
+if(($("#piso5").attr("value") == "") || ($("#piso5").attr("value") == "-") && ($("#dpto5").attr("value") == "") || ($("#dpto5").attr("value") == "-")){
+	$("#DyP5").css("display", "none");
+}
