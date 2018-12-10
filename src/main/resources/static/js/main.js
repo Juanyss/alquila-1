@@ -166,7 +166,7 @@ function nextPrev(n) {
 		} else if(($("#imageUpload1").attr('required') == "required") || ($("#imageUpload2").attr('required') == "required")
 				|| ($("#imageUpload3").attr('required') == "required") || ($("#imageUpload4").attr('required') == "required")
 				|| ($("#imageUpload5").attr('required') == "required")){
-			window.alert("Falta ingresar las cinco fotos");			
+			window.alert("Debe seleccionar cinco fotos para anunciar");			
 			return false;
 		}
 	

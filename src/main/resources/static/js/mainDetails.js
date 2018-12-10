@@ -68,3 +68,18 @@ if($("#AdInf").attr("value") == ""){
 	$("#AdInf").show()
 }
 
+if(($("#spanDpto2").attr("value") == "") || ($("#spanDpto2").attr("value") == "-") && ($("#spanPiso2").attr("value") == "") || ($("#spanPiso2").attr("value") == "-")){
+	$("#spanDpto1").css("display", "none");
+	$("#spanDpto2").css("display", "none");
+	$("#spanPiso1").css("display", "none");
+	$("#spanPiso2").css("display", "none");
+	
+}
+
+if(($("#infoDescrip").attr("value") != "Sin información adicional")){
+	$("#infoDescr").css("display", "none");
+	$("#divDesc").css("color","black");
+	$("#divDesc").css("font-size","0.8rem");
+	$("#divDesc").css("line-height","1.6");
+	$("#divDesc").css("margin-left","90px");
+}

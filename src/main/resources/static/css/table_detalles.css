@@ -409,3 +409,27 @@ display: none
 }
 
 */
+
+.InfoDescr{
+	height: 30px;
+    width: 30px;
+    margin-right: 5px;
+    background-image: url(/img/warning.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.DescDiv{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	font-family: 'Fira Sans', sans serif;
+	font-size: 1rem;
+	font-weight: 400;
+	color: #bcbcbc;
+	align-items: center;
+}

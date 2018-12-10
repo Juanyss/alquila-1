@@ -131,7 +131,7 @@
               <span class="title"><i class=""></i>Inmobiliaria</span>
             </label>
           </div>
-<button id="buscar">BUSCAR</button>
+		<button id="buscar">BUSCAR</button>
         </div>
       </div>
       </div>
@@ -174,8 +174,8 @@
                           <td class="column100 column2" data-column="column2" id="direccion2" >
                             <span class="text">Calle:</span><span class="text2" th:text="*{aStreet}"></span> 
                             <span class="text">Altura:</span><span class="text2" th:text="*{aNumber}"></span>
-                            <span class="text">Departamento:</span><span class="text2" th:text="*{aApartment}"></span>
-                            <span class="text">Piso:</span><span class="text2" th:text="*{aFloor}"></span>
+                            <span  id="spanDpto1" style="flex" class="text">Departamento:</span><span id="spanDpto2" style="flex" class="text2" th:text="*{aApartment}" th:value="*{aApartment}"></span>
+                            <span id="spanPiso1" style="flex" class="text">Piso:</span><span id="spanPiso2" class="text2" style="flex" th:text="*{aFloor}" th:value="*{aFloor}"></span>
                           </td>
                         </tr>
 
@@ -201,7 +201,9 @@
                 <span id="descripcion_icon"></span>
             <h2>DESCRIPCIÓN</h2>
             </div>
-            <p th:text="*{aAditionalInfo}"></p>
+            <div class="DescDiv" id="divDesc">
+            	<span class="InfoDescr" id="infoDescr" display="flex"></span><p th:text="*{aditionalProInfo}" th:value="*{aditionalProInfo}" id="infoDescrip"></p>
+            </div>
           </div>
             <div class="infolegal">
               <div class="legal_text">
