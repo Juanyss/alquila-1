@@ -59,26 +59,26 @@ html {
   display: none;
 }
 
-
-[for="crear_anuncio"] {
-  width: 6vh;
-  height: 6vh;
+.anuncio {
+  display:block;
+  width: 5.4vh;
+  height: 5.4vh;
   background-image:url(/img/alquilaicons_anuncio_2.png);
   background-origin:content-box;
   background-repeat: no-repeat;
   background-size:contain;
-  margin-bottom: 3px;
+  margin-bottom: 5px;
+    cursor: pointer;
 }
 
-input:checked + label[for="crear_anuncio"] {
+.anuncio:hover {
   background-image:url(/img/alquilaicons_anuncio.png);
   background-origin: content-box;
   background-repeat: no-repeat;
   background-size: contain;
   color: #d9654f;
-  text-align: center;
+ text-align: center;
 }
-
 
 img {
   margin-top: 10px;
@@ -412,7 +412,7 @@ main {
 .card {
   display: flex;
   flex-direction: column;
-  width: 380px;
+  width: 400px;
   height: 230px;
   padding: 8px;
   justify-content: center;
@@ -620,7 +620,7 @@ h3 {
   display: block;
   width: 20px;
   height: 20px;
-  background-image:url(/img/direccion.png);
+  background-image:url(/img/direccion_2.png);
   background-repeat:no-repeat;
   background-position:center;
   background-size:contain;

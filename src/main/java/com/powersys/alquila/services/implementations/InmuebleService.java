@@ -110,40 +110,5 @@ public class InmuebleService implements InmuebleServiceInterface{
 	}
 
 
-
-	@Override
-	public List<Property> findByPrice5000(Integer price) {
-		if(price <= 5001) {
-			return (List<Property>) this.propertyRepository.findByPrice(price);
-		}
-		return null;
-					
-	}
-	
-	@Override
-	public List<Property> findByPrice10000(Integer price) {
-		if (price <= 10000) {
-			return (List<Property>) this.propertyRepository.findByPrice(price);
-		}
-		return null;
-	}
-
-
-
-	@Override
-	public List<Property> findByPrice15000(Integer price) {
-		if (price > 10000) {
-			return (List<Property>) this.propertyRepository.findByPrice(price);
-		}
-		return null;
-	}
-
-
-
-	
-
-	
-
-	
 	
 }

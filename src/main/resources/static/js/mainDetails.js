@@ -62,10 +62,12 @@ if($("#patio").attr("value") == "NO"){
 }
 
 
-if($("#AdInf").attr("value") == ""){
-	$("#AdInf").hide()
-}else{
-	$("#AdInf").show()
+if($("#AdInf").attr("value") != "Sin información adicional"){
+	$("#infoLegal").css("display", "none");
+	$("#divDesc1").css("color","black");
+	$("#divDesc1").css("font-size","0.8rem");
+	$("#divDesc1").css("line-height","1.6");
+	$("#divDesc1").css("margin-left","90px");
 }
 
 if(($("#spanDpto2").attr("value") == "") || ($("#spanDpto2").attr("value") == "-") && ($("#spanPiso2").attr("value") == "") || ($("#spanPiso2").attr("value") == "-")){

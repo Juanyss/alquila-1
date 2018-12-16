@@ -60,6 +60,7 @@ html,body {
   z-index: 2;
   justify-content: space-between;
 }
+
 .fix-search .search div {
   width: 85%;
   height: 95%;
@@ -103,38 +104,20 @@ html,body {
   display: none;
 }
 
-
-
-[for="buscador"] {
-  width: 5vh;
-  height: 5vh;
-  background-image:url(/img/alquilaicons_buscar_2.png);
-  background-origin: content-box;
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin-bottom: 2px;
-}
-
-[for="crear_anuncio"] {
-  width: 5vh;
-  height: 5vh;
-  background-image: url(/img/alquilaicons_anuncio_2.png);
+.anuncio {
+  display:block;
+  width: 5.4vh;
+  height: 5.4vh;
+  background-image:url(/img/alquilaicons_anuncio_2.png);
   background-origin:content-box;
   background-repeat: no-repeat;
   background-size:contain;
-  margin-bottom: 2px;
+  margin-bottom: 5px;
+    cursor: pointer;
 }
 
-input:checked + label[for="buscador"] {
-  background-image:url(/img/alquilaicons_buscar.png);
-  background-origin: content-box;
-  background-repeat: no-repeat;
-  background-size: contain;
-  color: #d9654f;
-}
-
-input:checked + label[for="crear_anuncio"] {
-  background-image: url(/img/alquilaicons_anuncio.png);
+.anuncio:hover {
+  background-image:url(/img/alquilaicons_anuncio.png);
   background-origin: content-box;
   background-repeat: no-repeat;
   background-size: contain;
@@ -142,11 +125,33 @@ input:checked + label[for="crear_anuncio"] {
  text-align: center;
 }
 
-
-img {
-  width:245px;
-  height:auto;
+.buscar {
+	display:block;
+  width: 5.4vh;
+  height: 5.4vh;
+  background-image: url(/img/alquilaicons_buscar_2.png);
+  background-origin:content-box;
+  background-repeat: no-repeat;
+  background-size:contain;
+  margin-bottom: 5px;
+    cursor: pointer;
 }
+
+.buscar:hover {
+	display:block;
+  background-image:url(/img/alquilaicons_buscar.png);
+  background-origin:content-box;
+  background-repeat: no-repeat;
+  background-size:contain;
+  margin-bottom: 5px;
+    cursor: pointer;
+}
+img {
+    margin-top: 10px;
+    width: auto;
+    height:80%;
+}
+
 
 .btn_container {
   display: flex;
@@ -522,7 +527,7 @@ main div {
   flex-direction: row;
   flex-wrap:wrap;
   align-items:center;
-  justify-content:space-between;
+  justify-content: flex start;
   height: 50px;
   width: 85%;
   margin-top: 5%;
@@ -572,12 +577,12 @@ main div {
   font-family: 'Fira Sans', sans-serif;
   font-size: 1vw;
   font-weight: 700;
+  margin-right: 20px;
+  margin-left: 30px;
 }
 
 .icons2 {
   background-image: url(/img/direccion_2.png);
-  height: 30px;
-  width: 30px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -588,17 +593,22 @@ main div {
 }
 
 .text_col1 {
-  margin-top: -10px;
+  margin-top: 10px;
 }
 
 #direccioni {
+	width: 35px;
+	height: 35px;
   background-image: url(/img/direccion_2.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size:cover;
+  margin-left: 10px;
 }
 
 #detalles {
+	width: 45px;
+	height: 45px;
   background-image: url(/img/detalles.png);
   background-position: center;
   background-repeat: no-repeat;

@@ -1,5 +1,6 @@
 package com.powersys.alquila.webControllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,6 +56,10 @@ public class SearchWC {
 			System.out.println(searchDTO.getRooms());
 			
 			return "results";
+			
+			
+			
+			
 		}
 		
 		//solo precio
@@ -67,7 +72,7 @@ public class SearchWC {
 			System.out.println(searchDTO.getRooms());
 			System.out.println(this.propertyService.findByPrice(Integer.valueOf(searchDTO.getPrice())).size());
 			
-
+			
 			return "results";
 		}
 		//solo place type
@@ -102,8 +107,9 @@ public class SearchWC {
 			model.addAttribute("property", this.propertyService.findByTypeRooms(searchDTO.getPlaceType(), searchDTO.getRooms()));
 			return "results";
 		}
-		model.addAttribute("empty", true);
+		
 		return "results";
+				
 	}	
 	
 }

@@ -84,8 +84,9 @@ public class PropertyServiceImp implements PropertyServiceInterface {
 		for(Property property : (List<Property>) this.propertyRepository.findByPriceTypeRooms(price, type, rooms)) {
 			dtos.add(propertyToDTO(property));
 		}
-		
 		return dtos;
+		
+		
 	}
 
 	@Override

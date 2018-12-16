@@ -60,30 +60,31 @@ html {
 }
 
 
-[for="crear_anuncio"] {
-  width: 6vh;
-  height: 6vh;
-  background-image:url(img/alquilaicons_anuncio_2.png);
+.anuncio {
+  display:block;
+  width: 5.4vh;
+  height: 5.4vh;
+  background-image:url(/img/alquilaicons_anuncio_2.png);
   background-origin:content-box;
   background-repeat: no-repeat;
   background-size:contain;
-  margin-bottom: 3px;
+  margin-bottom: 5px;
+    cursor: pointer;
 }
 
-input:checked + label[for="crear_anuncio"] {
-  background-image:url(img/alquilaicons_anuncio.png);
+.anuncio:hover {
+  background-image:url(/img/alquilaicons_anuncio.png);
   background-origin: content-box;
   background-repeat: no-repeat;
   background-size: contain;
   color: #d9654f;
-  text-align: center;
+ text-align: center;
 }
 
-
 img {
-  margin-top: 10px;
-  width: auto;
-  height:80%;
+    margin-top: 10px;
+    width: auto;
+    height:80%;
 }
 
 .btn_container {
@@ -125,202 +126,69 @@ img {
   justify-content:flex-start;
   align-items: center;
   margin-left: 55px;
-  margin-top: 30px;
+  margin-top: 60px;
 }
 
-.select2 {
-  position: absolute;
-  text-align: center;
-  overflow: hidden;
-  display: block;
-  width: 70%;
-  border-bottom: 0px;
-  border-radius: 3px;
-  box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.3);
-  opacity: 1;
-  margin-top: 30px;
-}
 
-.select_container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background:white;
+  background-image: none;
+}
+/* Custom Select */
+.select {
   position: relative;
-  height: 100px;
-}
-
-.button_container {
-  margin-top: 40px;
-}
-
-
-.select2 .title {
-  position: absolute;
   display: block;
-  padding-top: 6%;
-  padding-bottom: 6%;
-  padding-left: 6%;
+  width: 10em;
+  height: 3em;
+  line-height: 3;
   background: white;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-  cursor: pointer;
-  text-align: left;
-  font-family: 'Lato', sans-serif;
-  font-weight: 700;
-  font-size: 0.8rem;
-  opacity: 2;
+  overflow: hidden;
+  border-radius: .20em;
+  margin: 30px;
+  box-shadow:  0px 1px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
-.select2 .placeholder {
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 10px ;
-  background-color: white;
-  padding-top: 6%;
-  padding-bottom: 6%;
-  background: white;
-  font-family: 'Lato', sans-serif;
-  font-size: 0.7rem;
-}
-
-.select2 > input {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  z-index: 2;
+select {
   width: 100%;
   height: 100%;
-  display: block;
-  opacity: 0;
+  color: black;
   cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+  font-family: 'Fira Sans', sans-serif;
 }
 
-.select2 .icon-arrow-up {
+/* Arrow */
+
+.select::after {
+  content: '\25BC';
   position: absolute;
-  z-index: 4;
-  right: 0.5rem;
-  top: 10px;
-  width: 18px;
-  height: 18px;
-  background-image:url(img/arrow_up.png);
-  background-position: center;
-  background-origin: content-box;
-  background-repeat: no-repeat;
-  background-size: contain;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 0.5em;
+  background: #ccc;
+  pointer-events: none;
+  
+}
+/* Transition */
+.select:hover::after {
+  color: #d9654f;
+}
+.select::after {
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
 }
 
-.select2 .icon-arrow-down { 
-  z-index: 3;
-  position: absolute;
-  bottom: 0.5rem;
-  right: 0.8rem;
-  width: 18px;
-  height: 18px;
-  background-image:url(img/arrow_down.png);
-  background-position: center;
-  background-origin: content-box;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-.select2 > input:checked ~ i.toggle.icon-arrow-down {
-  display: none;
-}
 
-.select2 > input:checked ~ i.toggle.icon-arrow-up {
-  display: block;
-}
-
-.select2 > input:checked div.options label.option .title {
-  display: none !important;
-}
-
-.select2 > input:not(:checked) {
-  z-index: 3;
-}
-
-.select2 > input:not(:checked) ~ label.option > span.title {
-  display: none;
-}
-
-.select2 > input:not(:checked) ~ i.toggle.icon-arrow-up {
-  display: none;
-}
-
-.select2 > input:not(:checked) ~ i.toggle.icon-arrow-down {
-  display: block;
-}
-
-.select2 > input:disabled {
-  cursor: no-drop;
-}
-
-.select2 > span.placeholder {
-  position: relative;
-  z-index: 0;
-  display: inline-block;
-  width: 100%;
-  color:darkgrey;
-  font-family: 'Lato', sans-serif;
-  border-top: 0px;
-  text-align:left;
-  font-size: 0.8rem;
-  padding-left: 8%;
-
-}
-
-.select2 label.option {
-  display:block;
-  overflow: hidden;
-  z-index: 4;
-  width: 100%;
-  transition: all 1s ease-out;
-}
-
-.select2 label.option span.title {
-  position: relative;
-  z-index: 4;
-  transition: background .3s ease-out;
-}
-
-.select2 label.option span.title i.icon {
-  padding-right: 8px;
-  color: #92a8d1;
-}
-
-.select2 label.option span.title:hover {
-  background-color: rgb(179, 172, 177, 1);
-  color: white;
-  box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.1);
-}
-
-.select2 label.option input {
-  display: none;
-}
-
-.select2 label.option input:checked ~ span.title {
-  position: absolute;
-  display: block;
-  z-index: 1;
-  top: 0px;
-  background: #fff;
-  border-top: 0px;
-  box-shadow: none;
-  color: inherit;
-  width: 100%;
-  font-family: 'Lato', sans-serif;
-  font-size: 0.8rem;
-}
-
-.select2 label.option input:disabled ~ span.title {
-  background: #f9f9f9 !important;
-  color: #aaa;
-}
-
-.select2 label.option input:disabled ~ span.title:hover {
-  color: #aaa;
-  background: none;
-  cursor: no-drop;
-}
 
 #buscar {
   padding: 5px;
@@ -333,6 +201,8 @@ img {
   border:none;
   width: 70px;
   cursor: pointer;
+  margin-top:20px;
+  margin-bottom:20px;
 }
 
 #buscar:focus {
@@ -354,6 +224,7 @@ main {
   overflow-y: hidden;
   box-sizing: border-box;
   overflow:hidden;
+  min-height:100%;
 }
 
 #block1 {
@@ -361,7 +232,7 @@ main {
   grid-column-start: 1;
   grid-column-end: 5;
   z-index: 1;
-  min-height:100%;
+  min-height:500px;
   background-color:darkgray;
 
 }
@@ -373,6 +244,7 @@ main {
   grid-column-end: 15;
   z-index: 1;
   background-color: white;
+  min-height:500px;
 }
 
 #Valores_buscados {
@@ -412,7 +284,7 @@ main {
 .card {
   display: flex;
   flex-direction: column;
-  width: 380px;
+  width: 450px;
   height: 230px;
   padding: 8px;
   justify-content: center;
@@ -591,7 +463,7 @@ main {
   right: 15px;
   width: 20px;
   height: 20px;
-  background-image:url(img/detalles_1.png);
+  background-image:url(/img/detalles_1.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -609,7 +481,7 @@ h3 {
   height: 20px;
   top: -30px;
   right: 15px;
-  background-image:url(img/detalles_2.png);
+  background-image:url(/img/detalles_2.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size:contain;
@@ -620,7 +492,7 @@ h3 {
   display: block;
   width: 20px;
   height: 20px;
-  background-image:url(img/direccion.png);
+  background-image:url(/img/direccion.png);
   background-repeat:no-repeat;
   background-position:center;
   background-size:contain;
@@ -679,13 +551,6 @@ h3 {
   margin: auto;
 }
 
-.border {
-  align-self: center;
-  width: 95%;
-  margin: auto;
-  border-top: 0.5px solid #ccc;
-
-}
 
 /*-----------------------------------------------*/
 

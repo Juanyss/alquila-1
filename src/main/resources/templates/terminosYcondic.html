@@ -17,16 +17,20 @@
           <div class="logo">
           <a class="header logo" th:href="@{/}"><img th:src="@{/img/alquila.png}"/></a>
         </div>               
-          <div class="buttons">
-          <a name="btnC" th:href="@{/property/add}"> 
+           <div class="buttons">
+          <a name="btnC">
             <div class="btn_container">
-            <input type="checkbox" id="crear_anuncio" name="btn" class="crear"/>
-              <label for="crear_anuncio"></label>
+            <span class="buscar"></span>
+              <span class="btn_buscar">BUSCAR</span>
+          </div>
+          </a>
+           <a name="btnC" th:href="@{/property/add}">
+            <div class="btn_container">
+            <span class="anuncio"></span>
               <span class="btn_crear">CREAR ANUNCIO</span>
           </div>
           </a>
-          </div>
-        
+      </div>
       </div>
       </header>
 

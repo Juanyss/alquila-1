@@ -1,5 +1,4 @@
-@import 'https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.3.2/css/simple-line-icons.min.css';
-@import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css';
+
 
 html,
 body {
@@ -1074,6 +1073,14 @@ input[type=number]::-webkit-outer-spin-button {
 
 input.invalid {
     background-color: #F5C67F;
+}
+
+.campos {
+	font-family: 'Fira Sans', sans serif;
+	font-size: 0.9rem;
+	font-weight:700;
+	color: white;
+	margin-left: 20px;
 }
 
 

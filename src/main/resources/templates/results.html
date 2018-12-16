@@ -22,10 +22,9 @@ xmlns="http://www.w3.org/1999/xhtml"
           </a>
         </div>
         <div class="buttons">
-          <a name="btnC" th:href="@{/property/add}"> 
+           <a name="btnC" th:href="@{/property/add}">
             <div class="btn_container">
-            <input type="checkbox" id="crear_anuncio" name="btn" class="crear"/>
-              <label for="crear_anuncio"></label>
+            <span class="anuncio"></span>
               <span class="btn_crear">CREAR ANUNCIO</span>
           </div>
           </a>
@@ -38,96 +37,44 @@ xmlns="http://www.w3.org/1999/xhtml"
         <div class="buscador_container">
           <div class="dropdown container">
             <div class="select_container">
-              <div class="select2">
-                <input type="radio" name="option2" />
-                <i class="toggle icon icon-arrow-down"></i>
-                <i class="toggle icon icon-arrow-up"></i>
-                <span class="placeholder">Tipo de inmueble...</span>
-                <label class="option">
-                  <input type="radio" name="option2" value="" />
-                  <span class="title"><i class=""></i>Todos</span>
-                </label>
-                <label class="option">
-                  <input type="radio" name="option2" value="" />
-                  <span class="title"><i class=""></i>Departamento</span>
-                </label>
-                <label class="option">
-                  <input type="radio" name="option2" value="1" />
-                  <span class="title"><i class=""></i>Casa</span>
-                </label>
-              </div>
+                 <div class="select">
+                        <select> 							 
+ 							 <option value="DEPARTAMENTO" >Departamento</option>
+							 <option value="CASA" >Casa</option>
+							 <option value="" >Todos</option>
+						</select>
+                    </div>
           </div>
           <div class="select_container">
-            <div class="select2">
-              <input type="radio" name="option3" />
-              <i class="toggle icon icon-arrow-down"></i>
-              <i class="toggle icon icon-arrow-up"></i>
-              <span class="placeholder">Monto del alquiler...</span>
-              <label class="option">
-                <input type="radio" name="option3" value="" />
-                <span class="title"><span class=""></span>Todos</span>
-              </label>
-              <label class="option">
-                <input type="radio" name="option3" value="1" />
-                <span class="title"><span class=""></span>Hasta $5000</span>
-              </label>
-              <label class="option">
-                <input type="radio" name="option3" value="2" />
-                <span class="title"><span class=""></span>Hasta $10000</span>
-              </label>
-              <label class="option">
-                <input type="radio" name="option3" value="3" />
-                <span class="title"><span class=""></span>Hasta $15000</span>
-              </label>
-            </div>
+               <div class="select">
+                       <select> 							 
+ 							 <option value="5000" >Hasta $5000</option>
+							 <option value="10000" >Hasta $10000</option>
+							 <option value="15000" >Hasta $15000</option>
+							 <option value="" >Todos</option>
+						</select>
+					</div>
             </div>
             <div class="select_container">
-              <div class="select2">
-                <input type="radio" name="option4" />
-                <i class="toggle icon icon-arrow-down"></i>
-                <i class="toggle icon icon-arrow-up"></i>
-                <span class="placeholder">Cantidad de ambientes</span>
-                <label class="option">
-                  <input type="radio" name="option4" value="" />
-                  <span class="title"><i class=""></i>Monoambiente</span>
-                </label>
-                <label class="option">
-                  <input type="radio" name="option4" value="1 AMBIENTE" />
-                  <span class="title"><i class=""></i>1</span>
-                </label>
-                <label class="option">
-                  <input type="radio" name="option4" value="2 AMBIENTE" />
-                  <span class="title"><i class=""></i>2</span>
-                </label>
-                <label class="option">
-                  <input type="radio" name="option4" value="3 AMBIENTE" />
-                  <span class="title"><i class=""></i>3</span>
-                </label>
-                <label class="option">
-                  <input type="radio" name="option4" vale="4 O MAS AMBIENTES" />
-                  <span class="title"><i class=""></i>4 o más</span>
-                </label>
-              </div>
+               <div class="select">
+                        <select> 							 
+ 							 <option value="MONOAMBIENTE" >Monoambiente</option>
+							 <option value="1" >1</option>
+							 <option value="2" >2</option>
+							 <option value="3" >3</option>
+							 <option value="4 O MAS" >4 o más</option>
+							 <option value="" >Todos</option>
+						</select>
+                    </div>
             </div>
             <div class="select_container">
-              <div class="select2">
-                <input type="radio" name="option5" />
-                <i class="toggle icon icon-arrow-down"></i>
-                <i class="toggle icon icon-arrow-up"></i>
-                <span class="placeholder">Tipo de dueño...</span>
-                <label class="option">
-                  <input type="radio" name="option5" value="" />
-                  <span class="title"><i class=""></i>Todos</span>
-                </label>
-                <label class="option">
-                  <input type="radio" name="option5" value="" />
-                  <span class="title"><i class=""></i>Propietario</span>
-                </label>
-                <label class="option">
-                  <input type="radio" name="option5" value="1" />
-                  <span class="title"><i class=""></i>Inmobiliaria</span>
-                </label>
-              </div>
+               <div class="select">
+                        <select> 							 
+ 							 <option value="Propietario" >Propietario</option>
+							 <option value="Inmobiliaria" >Inmobiliaria</option>
+							 <option value="" >Todos</option>							 
+						</select>
+                    </div>
             </div>
 
             <div class="button_container">
@@ -138,11 +85,9 @@ xmlns="http://www.w3.org/1999/xhtml"
       </div>
       <div id="block2">
         <div id="Valores_buscados">
-          <span class="buscados">#Departamento</span>
-          <span class="buscados">#Hasta$10000</span>
         </div>
         <div class="row">
-          
+         <div  th:if="!${#lists.isEmpty(property)}"> 
          <th:block th:each="p : ${property}">
           <div  class="example-1 card">
             <div class="wrapper" th:style="'background-image:url(' + @{/image/} + ${p.id} +');'">
@@ -178,6 +123,12 @@ xmlns="http://www.w3.org/1999/xhtml"
             </div>
           </div>
          </th:block>
+         </div>
+         <div th:if="${#lists.isEmpty(property)}">
+  			 <div class="DescDiv" id="divDesc">
+            	<span class="InfoDescr" id="infoDescr" display="flex"></span><p id="infoDescrip">No se han encontrado resultados</p>
+            </div>
+		 </div>
         </div>
       </div>
     </main>
@@ -188,7 +139,7 @@ xmlns="http://www.w3.org/1999/xhtml"
           <a href="#"><span class="footer_links">Sobre nosotros...</span></a>
           <a th:href="@{/terminosYcondic}"><span class="footer_links">Terminos y condiciones</span></a>
           <br />
-          <a href="#"><span class="footer_links">Buscar</span></a>
+          <a th:href="@{/}"><span class="footer_links">Buscar</span></a>
           <a th:href="@{/property/add}"><span class="footer_links">Crear anuncio...</span></a>
         </div>
         <div class="suscribe">

@@ -18,10 +18,9 @@
           <a class="header logo" href="#"><img th:src="@{/img/alquila.png}"/></a>
         </div>               
           <div class="buttons">
-          <a name="btnC" th:href="@{/property/add}"> 
+           <a name="btnC" th:href="@{/property/add}">
             <div class="btn_container">
-            <input type="checkbox" id="crear_anuncio" name="btn" class="crear"/>
-              <label for="crear_anuncio"></label>
+            <span class="anuncio"></span>
               <span class="btn_crear">CREAR ANUNCIO</span>
           </div>
           </a>
@@ -38,35 +37,38 @@
         <div class="buscador">
             <form id="form" class="firstcontainer" th:action="@{/search}" th:object="${search}" method="post">
             <div class="buscador_container">
+             <div class="first_tittle">
+                <h3>¡Encontrá el alquiler perfecto para vos!</h3>
+                </div>
                 <div class="dropdown container">
-                    <div class="select2">
-                        <select th:field="*{placeType}"> 							 
+                    <div class="select">
+                        <select th:field="*{placeType}" >                        	                          				 
  							 <option value="DEPARTAMENTO" >Departamento</option>
 							 <option value="CASA" >Casa</option>
 							 <option value="" >Todos</option>
 						</select>
                     </div>
 
-                    <div class="select2">
-                       <select th:field="*{price}"> 							 
+                    <div class="select">
+                       <select th:field="*{price}">                       		     							 
  							 <option value="5000" >Hasta $5000</option>
 							 <option value="10000" >Hasta $10000</option>
 							 <option value="15000" >Hasta $15000</option>
 							 <option value="" >Todos</option>
 						</select>
 					</div>
-                    <div class="select2">
-                        <select th:field="*{rooms}"> 							 
+                    <div class="select">
+                        <select th:field="*{rooms}">                        	     							 
  							 <option value="MONOAMBIENTE" >Monoambiente</option>
-							 <option value="1" >1</option>
-							 <option value="2" >2</option>
-							 <option value="3" >3</option>
-							 <option value="4 O MAS" >4 o más</option>
+							 <option value="1" >1 Ambiente</option>
+							 <option value="2" >2 Ambientes</option>
+							 <option value="3" >3 Ambientes</option>
+							 <option value="4 O MAS" >4 o más Ambientes</option>
 							 <option value="" >Todos</option>
 						</select>
                     </div>
 
-                    <div class="select2">
+                    <div class="select">
                         <select> 							 
  							 <option value="Propietario" >Propietario</option>
 							 <option value="Inmobiliaria" >Inmobiliaria</option>

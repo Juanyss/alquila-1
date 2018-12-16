@@ -29,9 +29,7 @@ public interface InmuebleServiceInterface {
 	
 	
 	
-	List<Property> findByPrice10000(Integer price);
-	List<Property> findByPrice15000(Integer price);
-	List<Property> findByPrice5000(Integer price);
+	
 	
 	
 	

@@ -38,7 +38,7 @@ a:link {
 }
 a:link, a:visited {
     text-decoration: none;
-    color: black;
+    color: #d9654f;
 }
 
 a:link:active, a:visited:active {
@@ -105,7 +105,6 @@ a:link:active, a:visited:active {
 
 h1 {
     font-family: 'Asap', sans-serif;
-    font-weight: 900;
     color:#d9654f;
     margin-bottom: 30px;
 }
@@ -232,7 +231,35 @@ span.title {
     font-size: 1vw;
 }
 /*......................................*/
+.buscar {
+	display:block;
+  width: 5.4vh;
+  height: 5.4vh;
+  background-image:url(/img/alquilaicons_buscar_2.png);
+  background-origin:content-box;
+  background-repeat: no-repeat;
+  background-size:contain;
+  margin-bottom: 5px;
+    cursor: pointer;
+}
 
+.buscar:hover {
+	display:block;
+  background-image:url(/img/alquilaicons_buscar.png);
+  background-origin:content-box;
+  background-repeat: no-repeat;
+  background-size:contain;
+  margin-bottom: 5px;
+    cursor: pointer;
+}
+img {
+    margin-top: 10px;
+    width: auto;
+    height:80%;
+}
+
+
+/*......................................*/
 
 .footercontainer {
     width: 80vw;
@@ -242,7 +269,6 @@ span.title {
     align-content: center;
     margin-right: 50px;
 }
-
 
 .redes {
     text-align: center;
@@ -263,16 +289,21 @@ span.title {
 }
 
 .text {
-    font-family: 'Asap', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
     margin-bottom: 30px;
+    font-size: 0.8rem;
+    line-height:20px;
     text-align : justify;
 }
 
 .items {
-    font-family: 'Asap', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
     list-style: circle;
     margin-left: 0;
-    font-weight: 400;
+    font-weight: 700;
+    font-size:0.8rem;
+    line-height:20px;
+    
     
 }
 
